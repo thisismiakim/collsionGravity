@@ -43,8 +43,11 @@ void NGLScene::resizeGL(int _w, int _h)
 
 
 // variables
+
+// Sphere  생성
+
 const static int s_bboxExtents = 10; // bounding box extents
-const static float sphereRadius = 0.1f;
+const static float sphereRadius =2.0f;
 ngl::Vec3 randomInitPos(ngl::Random::getRandomPoint(s_bboxExtents, s_bboxExtents, s_bboxExtents)); // 생성포즈
 ngl::Vec3 centrePos(0, 0, 0);
 ngl::Vec3 midPos(0,20.0f, 0);
@@ -58,6 +61,7 @@ void NGLScene::createSpheres()
                                 sphereRadius); });
 }
 
+//ngl::Random::randomPositiveNumber(2) + 0.5f
 
 
 
@@ -105,7 +109,7 @@ void NGLScene::initializeGL()
 
   // ---------- objects -----------
   // ------ Sphere
-  ngl::VAOPrimitives::createSphere("sphere", 30.0f, 40.0f); // radius..
+  ngl::VAOPrimitives::createSphere("sphere", 1.0f, 40.0f); // radius..
 
   // ------ Bounding box
   m_bbox = std::make_unique<ngl::BBox>(ngl::Vec3(0.0f, 0.0f, 0.0f), 80.0f, 80.0f, 80.0f);
@@ -199,10 +203,6 @@ void NGLScene::paintGL()
 
 
 
-
-
-
-
 /* update sphere per frame */
 void NGLScene::updateScene()
 {
@@ -220,10 +220,7 @@ void NGLScene::timerEvent(QTimerEvent *_event)
 {
   if (_event->timerId() == m_updateTimer)
   {
-    if (m_animationOnOff != true)
-    {
-      return;
-    }
+    if (m_animationOnOff != true){return;}
   }
   updateScene();
   update();
@@ -232,12 +229,8 @@ void NGLScene::timerEvent(QTimerEvent *_event)
 
 
 
-
-
-
-
 /* collision detection */
-
+// check collision between two spheres
 bool NGLScene::sphereSphereCollision(ngl::Vec3 _pos1, GLfloat _radius1, ngl::Vec3 _pos2, GLfloat _radius2)
 {
   // the relative position of the spheres
