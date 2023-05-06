@@ -62,7 +62,7 @@ private:
     // animation on/off
     bool m_animationOnOff;
     // detect collisions per frame
-    void detectCollisions();
+    void allCollisionCheck();
 
 
 
@@ -71,7 +71,7 @@ private:
 
     // check collision detection between two spheres
     // position vector and radius is needed
-    bool sphereSphereCollision( ngl::Vec3 _pos1, GLfloat _radius1, ngl::Vec3 _pos2, GLfloat _radius2 );
+    bool sphereSphereColDetect( ngl::Vec3 _pos1, GLfloat _radius1, ngl::Vec3 _pos2, GLfloat _radius2 );
     
 
 
@@ -79,7 +79,7 @@ private:
     // calculate collisions between the bounding box and spheres
     void BBoxCollision();
     // calculate collisions betweens spheres
-    void checkSphereCollisions();
+    void sphereSphereColResponse();
     
 
 

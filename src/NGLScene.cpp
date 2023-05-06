@@ -46,22 +46,19 @@ void NGLScene::resizeGL(int _w, int _h)
 
 // Sphere  생성
 
-const static int s_bboxExtents = 10; // bounding box extents
+const static int s_bboxExtents = 20; // bounding box extents
 const static float sphereRadius =2.0f;
-ngl::Vec3 randomInitPos(ngl::Random::getRandomPoint(s_bboxExtents, s_bboxExtents, s_bboxExtents)); // 생성포즈
-ngl::Vec3 centrePos(0, 0, 0);
-ngl::Vec3 midPos(0,20.0f, 0);
-
+ngl::Vec3 initVel(20.0f, 0.0f, 0.0f);
 void NGLScene::createSpheres()
 {
   m_sphereArray.resize(m_numSpheres);
   std::generate(std::begin(m_sphereArray), std::end(m_sphereArray), [this]()
-                { return Sphere(centrePos,
+                { return Sphere(ngl::Random::getRandomPoint(s_bboxExtents, s_bboxExtents, s_bboxExtents),
                                 ngl::Random::getRandomVec3(), // 시작 디렉션
-                                sphereRadius); });
+                                sphereRadius,
+                                initVel); });
 }
 
-//ngl::Random::randomPositiveNumber(2) + 0.5f
 
 
 
@@ -151,9 +148,15 @@ void NGLScene::loadMatricesToDiffuseShader()
 void NGLScene::loadMatricesToColourShader()
 {
   ngl::ShaderLib::use("nglColourShader");
+  ngl::Mat4 MV;
   ngl::Mat4 MVP;
-  MVP = m_project * m_view * m_mouseGlobalTX;
+  ngl::Mat3 normalMatrix;
+  MV = m_view * m_mouseGlobalTX;
+  MVP = m_project * MV;
+  normalMatrix = MV;
+  normalMatrix.inverse().transpose();
   ngl::ShaderLib::setUniform("MVP", MVP);
+  ngl::ShaderLib::setUniform("normalMatrix", normalMatrix);
 }
 
 
@@ -203,35 +206,23 @@ void NGLScene::paintGL()
 
 
 
-/* update sphere per frame */
-void NGLScene::updateScene()
-{
-  for (Sphere &s : m_sphereArray)
-  {
-    s.updatePos();
-    // 스피어 위치, 충돌체크, 중력, 콜리전, 프레임마다 변하는 물리 장치들
-    // 프레임 마다 움직이고
-  }
-  detectCollisions(); // 그 다음에 충돌 체크
-}
-
-
-void NGLScene::timerEvent(QTimerEvent *_event)
-{
-  if (_event->timerId() == m_updateTimer)
-  {
-    if (m_animationOnOff != true){return;}
-  }
-  updateScene();
-  update();
-}
 
 
 
 
-/* collision detection */
-// check collision between two spheres
-bool NGLScene::sphereSphereCollision(ngl::Vec3 _pos1, GLfloat _radius1, ngl::Vec3 _pos2, GLfloat _radius2)
+
+
+
+
+
+
+
+
+
+
+
+/* collision detection : sphere - sphere */
+bool NGLScene::sphereSphereColDetect(ngl::Vec3 _pos1, GLfloat _radius1, ngl::Vec3 _pos2, GLfloat _radius2)
 {
   // the relative position of the spheres
   ngl::Vec3 relPos; // 상대적 위치값
@@ -261,90 +252,33 @@ bool NGLScene::sphereSphereCollision(ngl::Vec3 _pos1, GLfloat _radius1, ngl::Vec
 
 
 
-
-// 바운딩 박스 충돌체크
-void NGLScene::BBoxCollision()
+/* collision response: sphere - sphere */
+void NGLScene::sphereSphereColResponse()
 {
-  // create an array of the extents of the bounding box
-  // 꼭짓점 여섯개
-  float ext[6];
-  ext[0] = ext[1] = (m_bbox->height() / 2.0f);
-  ext[2] = ext[3] = (m_bbox->width() / 2.0f);
-  ext[4] = ext[5] = (m_bbox->depth() / 2.0f);
+  // create a variable for checking collision
+  bool collisionCheck;
 
-  // 벡터
-  // Dot product needs a Vector so we convert The Point Temp into a Vector so we can
-  // do a dot product on it
-  // 내적 왜함?
-  ngl::Vec3 p;
-
-  //
-  // D is the distance of the Agent from the Plane. If it is less than ext[i] then there is
-  // no collision
-  GLfloat D;
-
-  // 스피어와 충돌체크
-  // Loop for each sphere in the vector list
-  for (Sphere &s : m_sphereArray)
+  unsigned int size = m_sphereArray.size();
+  // collision check for all spheres
+  for (unsigned int s = 0; s < size; ++s)
   {
-    // 포지션 가져옴
-    p = s.getPos();
-
-    // 여섯면에 대한 충돌체크
-    // Now we need to check the Sphere agains all 6 planes of the BBOx
-    // If a collision is found we change the dir of the Sphere then Break
-    for (int i = 0; i < 6; ++i)
+    // collision check for current sphere and all spheres
+    for (unsigned int current_s = 0; current_s < size; ++current_s)
     {
-      // to calculate the distance we take the dotporduct of the Plane Normal
-      // with the new point P
-      D = m_bbox->getNormalArray()[i].dot(p);
-      // Now Add the Radius of the sphere to the offsett
-      D += s.getRadius();
-      // If this is greater or equal to the BBox extent /2 then there is a collision
-      // So we calculate the Spheres new direction
-
-      if (D >= ext[i])
-      {
-        // We use the same calculation as in raytracing to determine the
-        //  the new direction
-        GLfloat x = 2 * (s.getDirection().dot((m_bbox->getNormalArray()[i])));
-        ngl::Vec3 d = m_bbox->getNormalArray()[i] * x;
-        s.setDirection(s.getDirection() - d);
-        s.setHit(); // 충돌입니다
-      }             // end of hit test
-    }               // end of each face test
-  }                 // end of for
-}
-
-
-
-
-
-// 실제로 만나는 거 끼리 충돌 체크
-void NGLScene::checkSphereCollisions()
-{
-  bool collide;
-
-  unsigned int size = m_sphereArray.size(); // 어레이로 사이즈 받아오고
-
-  // for 루프로 모든 공에 대해 체크
-  for (unsigned int ToCheck = 0; ToCheck < size; ++ToCheck)
-  {
-    for (unsigned int Current = 0; Current < size; ++Current)
-    {
-      // don't check against self
-      if (ToCheck == Current)
+      // skip if the sphere is itself
+      if (s == current_s)
         continue;
 
       else
       {
-        // cout <<"doing check"<<endl;
-        collide = sphereSphereCollision(m_sphereArray[Current].getPos(), m_sphereArray[Current].getRadius(),
-                                        m_sphereArray[ToCheck].getPos(), m_sphereArray[ToCheck].getRadius());
-        if (collide == true)
+        /* collision detection */
+        collisionCheck = sphereSphereColDetect(m_sphereArray[current_s].getPos(), m_sphereArray[current_s].getRadius(), m_sphereArray[s].getPos(), m_sphereArray[s].getRadius());
+      
+        /* collision response*/
+        if (collisionCheck == true)
         {
-          m_sphereArray[Current].reverse();
-          m_sphereArray[Current].setHit();
+          m_sphereArray[current_s].collisionResponse_ss();
+          m_sphereArray[current_s].setHit();
         }
       }
     }
@@ -353,14 +287,79 @@ void NGLScene::checkSphereCollisions()
 
 
 
-void NGLScene::detectCollisions()
-{
 
-  if (m_boolSphereSphereCollide == true) // 두공이 충돌이 아니면
+/* collision check, response - bounding box - sphere */
+void NGLScene::BBoxCollision()
+{
+  // create an array of the extents of the bounding box
+  float bboxExt[6];
+  bboxExt[0] = bboxExt[1] = (m_bbox->height() / 2.0f);
+  bboxExt[2] = bboxExt[3] = (m_bbox->width() / 2.0f);
+  bboxExt[4] = bboxExt[5] = (m_bbox->depth() / 2.0f);
+
+
+  // Dot product needs a Vector so we convert The Point Temp into a Vector so we can
+  // do a dot product on it
+  ngl::Vec3 p;
+
+  // D is the distance of the Agent from the Plane. If it is less than bboxExt[i] then there is
+  // no collision
+  GLfloat D;
+
+
+  // Loop for each sphere in the vector list
+  for (Sphere &s : m_sphereArray)
   {
-    checkSphereCollisions(); // 스피어끼리 충돌 체크
-  }
-  BBoxCollision(); // 바운딩 박스와의 충돌 체크
+    p = s.getPos();
+
+    // Now we need to check the Sphere agains all 6 planes of the BBOx
+    // If a collision is found we change the dir of the Sphere then Break
+
+    // vel_y collision, height
+    for (int i = 0; i < 2; ++i)
+    {
+      D = m_bbox->getNormalArray()[i].dot(p);
+      D += s.getRadius();
+
+      if (D >= bboxExt[i]) 
+      {
+        /* collision response: bounding box - sphere */
+        s.collisionResponse_bbox_ydir();
+        s.setHit(); 
+      }            
+    }      
+
+    // width, vel_x
+    for (int i = 2; i < 4; ++i) 
+    {
+      D = m_bbox->getNormalArray()[i].dot(p);
+      D += s.getRadius();
+
+      if (D >= bboxExt[i]) 
+      {
+        /* collision response: bounding box - sphere */
+        s.collisionResponse_bbox_xdir();
+        s.setHit(); 
+      }            
+    }  
+
+    // depth vel_z
+    for (int i = 4; i < 6; ++i)
+    {
+      D = m_bbox->getNormalArray()[i].dot(p);
+      D += s.getRadius();
+
+      if (D >= bboxExt[i]) 
+      {
+        /* collision response: bounding box - sphere */
+        s.collisionResponse_bbox_zdir();
+        s.setHit(); 
+      }            
+    }      
+
+
+
+  }                 
 }
 
 
@@ -369,6 +368,50 @@ void NGLScene::detectCollisions()
 
 
 
+
+
+
+
+
+
+
+
+
+
+// check all Collisions
+void NGLScene::allCollisionCheck()
+{
+  if (m_boolSphereSphereCollide == true) 
+  {
+    sphereSphereColResponse(); 
+  }
+  BBoxCollision(); 
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* update sphere per frame */
+void NGLScene::updateScene()
+{
+  for (Sphere &s : m_sphereArray)
+  {
+    s.updateSpherepos(1.0f/60.0f);
+  }
+  allCollisionCheck();
+
+}
 
 
 
@@ -409,3 +452,12 @@ void NGLScene::keyPressEvent(QKeyEvent *_event)
   update();
 }
 
+void NGLScene::timerEvent(QTimerEvent *_event)
+{
+  if (_event->timerId() == m_updateTimer)
+  {
+    if (m_animationOnOff != true){return;}
+  }
+  updateScene();
+  update();
+}
