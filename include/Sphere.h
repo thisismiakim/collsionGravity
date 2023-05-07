@@ -11,6 +11,7 @@ public :
 	Sphere(ngl::Vec3 _pos, ngl::Vec3 _dir, GLfloat _rad, ngl::Vec3 _vel);
 	Sphere();
 	~Sphere()=default; 
+	
 	// set sphere position, direction and radius
 	void set(ngl::Vec3 _pos, ngl::Vec3 _dir, GLfloat _rad, ngl::Vec3 _vel);
 
@@ -24,12 +25,6 @@ public :
 	void collisionResponse_bbox_zdir();
 	
 	void collisionResponse_ss();
-
-	/////
-	// collision responsee.. not good
-	inline void reverse(){m_dir=m_dir*-1.0;}
-
-	
 
 
 	inline void setHit(){m_hit=true;}

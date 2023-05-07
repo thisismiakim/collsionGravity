@@ -1,0 +1,4 @@
+/Users/mk/Desktop/NGL_Project/collision3/build/CMakeFiles/SphereCollision.dir
+/Users/mk/Desktop/NGL_Project/collision3/build/CMakeFiles/edit_cache.dir
+/Users/mk/Desktop/NGL_Project/collision3/build/CMakeFiles/rebuild_cache.dir
+/Users/mk/Desktop/NGL_Project/collision3/build/CMakeFiles/SphereCollision_autogen.dir

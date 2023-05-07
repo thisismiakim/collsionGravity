@@ -42,10 +42,7 @@ void NGLScene::resizeGL(int _w, int _h)
 
 
 
-// variables
-
-// Sphere  생성
-
+/* create sphere */
 const static int s_bboxExtents = 20; // bounding box extents
 const static float sphereRadius =2.0f;
 ngl::Vec3 initVel(20.0f, 0.0f, 0.0f);
@@ -206,18 +203,7 @@ void NGLScene::paintGL()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+// ------------------------------------------------------------------- //
 
 
 
@@ -291,31 +277,23 @@ void NGLScene::sphereSphereColResponse()
 /* collision check, response - bounding box - sphere */
 void NGLScene::BBoxCollision()
 {
-  // create an array of the extents of the bounding box
+  // array of the extents of the bounding box
   float bboxExt[6];
   bboxExt[0] = bboxExt[1] = (m_bbox->height() / 2.0f);
   bboxExt[2] = bboxExt[3] = (m_bbox->width() / 2.0f);
   bboxExt[4] = bboxExt[5] = (m_bbox->depth() / 2.0f);
 
 
-  // Dot product needs a Vector so we convert The Point Temp into a Vector so we can
-  // do a dot product on it
   ngl::Vec3 p;
-
-  // D is the distance of the Agent from the Plane. If it is less than bboxExt[i] then there is
-  // no collision
   GLfloat D;
 
 
-  // Loop for each sphere in the vector list
+  /* collision detection: sphere - bounding box */
   for (Sphere &s : m_sphereArray)
   {
     p = s.getPos();
 
-    // Now we need to check the Sphere agains all 6 planes of the BBOx
-    // If a collision is found we change the dir of the Sphere then Break
-
-    // vel_y collision, height
+    // y direction collision check
     for (int i = 0; i < 2; ++i)
     {
       D = m_bbox->getNormalArray()[i].dot(p);
@@ -329,7 +307,7 @@ void NGLScene::BBoxCollision()
       }            
     }      
 
-    // width, vel_x
+    // x direction collision check
     for (int i = 2; i < 4; ++i) 
     {
       D = m_bbox->getNormalArray()[i].dot(p);
@@ -343,7 +321,7 @@ void NGLScene::BBoxCollision()
       }            
     }  
 
-    // depth vel_z
+    // z direction collision check
     for (int i = 4; i < 6; ++i)
     {
       D = m_bbox->getNormalArray()[i].dot(p);
@@ -356,23 +334,8 @@ void NGLScene::BBoxCollision()
         s.setHit(); 
       }            
     }      
-
-
-
   }                 
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -391,17 +354,6 @@ void NGLScene::allCollisionCheck()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 /* update sphere per frame */
 void NGLScene::updateScene()
 {
@@ -415,7 +367,7 @@ void NGLScene::updateScene()
 
 
 
-
+// ------------------------------------------------------------------- //
 
 
 /* Key Events */
