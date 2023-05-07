@@ -2,11 +2,10 @@
 #include <ngl/VAOPrimitives.h>
 
 
-Sphere::Sphere( ngl::Vec3 _pos, ngl::Vec3 _dir,  GLfloat _rad, ngl::Vec3 _vel)
+Sphere::Sphere( ngl::Vec3 _pos, GLfloat _rad, ngl::Vec3 _vel)
 {
   //velocity
   m_pos=_pos;
-  m_dir=_dir;
   m_radius=_rad;
   m_vel=_vel;
   m_hit=false;
@@ -17,10 +16,9 @@ Sphere::Sphere()
   m_hit=false;
 }
 
-void Sphere :: set(ngl::Vec3 _pos, ngl::Vec3 _dir, GLfloat _rad, ngl::Vec3 _vel)
+void Sphere :: set(ngl::Vec3 _pos, GLfloat _rad, ngl::Vec3 _vel)
 {
   m_pos=_pos;
-  m_dir=_dir;
   m_radius=_rad;
   m_vel =_vel;
 }
@@ -48,13 +46,13 @@ void Sphere::draw(const std::string &_shaderName, const ngl::Mat4 &_globalMat,  
   //Change the color when hitted
   if(m_hit) // hit colour
   {
-  ngl::ShaderLib::setUniform("Colour", 1.0f, 0.0f, 1.0f, 1.0f); 
+  ngl::ShaderLib::setUniform("Colour", 140.0f/255.0f, 251.0f/255.0f, 255.0f/255.0f, 1.0f); 
   ngl::ShaderLib::setUniform("lightPos", 1.0f, 1.0f, 1.0f);
   ngl::ShaderLib::setUniform("lightDiffuse", 1.0f, 1.0f, 1.0f, 1.0f);
   }
   else // default
   {
-  ngl::ShaderLib::setUniform("Colour", 1.0f, 1.0f, 1.0f, 1.0f); // white random?
+  ngl::ShaderLib::setUniform("Colour", 245.0f/255.0f, 255.0f/255.0f, 173.0f/255.0f, 1.0f); // white random?
   ngl::ShaderLib::setUniform("lightPos", 1.0f, 1.0f, 1.0f);
   ngl::ShaderLib::setUniform("lightDiffuse", 1.0f, 1.0f, 1.0f, 1.0f);
   }
@@ -84,7 +82,7 @@ void Sphere::updateSpherepos(const float &dt)
 void Sphere::collisionResponse_bbox_xdir()
 {
   // set coefficient of restitution(COR)
-  static const float cor = 0.9f;
+  static const float cor = 0.7f;
   if (abs(m_vel.m_x) >= 0.0f)
   {
     m_vel.m_x *= -1.0 * cor;
@@ -94,10 +92,15 @@ void Sphere::collisionResponse_bbox_xdir()
 void Sphere::collisionResponse_bbox_ydir()
 {
   // set coefficient of restitution(COR)
-  static const float cor = 0.9f;
+  static const float cor = 0.5f;
+  // set coefficient of friction (COF)
+  static const float cof = 0.99f;
+
   if (abs(m_vel.m_y) >= 0.0f)
   {
     m_vel.m_y *= -1.0 * cor;
+    m_vel.m_x *= cof;
+    m_vel.m_z *= cof;
   }  
   
 }
@@ -106,7 +109,7 @@ void Sphere::collisionResponse_bbox_ydir()
 void Sphere::collisionResponse_bbox_zdir()
 {
   // set coefficient of restitution(COR)
-  static const float cor = 0.9f;
+  static const float cor = 0.7f;
   if (abs(m_vel.m_z) >= 0.0f)
   {
     m_vel.m_z *= -1.0 * cor;
@@ -122,7 +125,7 @@ void Sphere::collisionResponse_ss()
 {
   // perfect elastic collision
   // set coefficient of restitution(COR)
-  static const float cor = 1.0f;
+  static const float cor = 0.9f;
 
   GLfloat m_velScale = abs(m_vel.m_x) + abs(m_vel.m_y) + abs(m_vel.m_z);
   if (m_velScale >= 0.0f)

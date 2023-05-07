@@ -43,21 +43,17 @@ void NGLScene::resizeGL(int _w, int _h)
 
 
 /* create sphere */
-const static int s_bboxExtents = 20; // bounding box extents
-const static float sphereRadius =2.0f;
-ngl::Vec3 initVel(20.0f, 0.0f, 0.0f);
+const static int s_bboxExtents = 35; // bounding box extents
+const static float sphereRadius =1.5f;
+ngl::Vec3 initVel(20.0f, 10.0f, 30.0f);
 void NGLScene::createSpheres()
 {
   m_sphereArray.resize(m_numSpheres);
   std::generate(std::begin(m_sphereArray), std::end(m_sphereArray), [this]()
-                { return Sphere(ngl::Random::getRandomPoint(s_bboxExtents, s_bboxExtents, s_bboxExtents),
-                                ngl::Random::getRandomVec3(), // 시작 디렉션
+                { return Sphere(ngl::Random::getRandomPoint(s_bboxExtents, abs(s_bboxExtents/2), s_bboxExtents),
                                 sphereRadius,
                                 initVel); });
 }
-
-
-
 
 
 
@@ -69,7 +65,7 @@ void NGLScene::initializeGL()
 
   // ------------- background --------------
   glClearColor(1.74f, 0.73f, 0.74f, 1.0f); // pink
-
+  // 1.74f, 0.73f, 0.74f, 1.0f
   // enable depth testing for drawing
   glEnable(GL_DEPTH_TEST);
   // enable multisampling for smoother drawing
@@ -95,7 +91,7 @@ void NGLScene::initializeGL()
 
   // ------ Colour Shader for Bounding Box and Grids
   ngl::ShaderLib::use("nglColourShader");
-  ngl::ShaderLib::setUniform("Colour", 1.0f, 0.0f, 0.0f, 1.0f); // red
+  ngl::ShaderLib::setUniform("Colour", 1.0f, 1.0f, 1.0f, 1.0f); // red
 
   glEnable(GL_DEPTH_TEST); // for removal of hidden surfaces
 

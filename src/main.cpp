@@ -32,7 +32,7 @@ int main(int argc, char **argv)
   int numSphere;
   if(argc == 1)
   {
-    numSphere = 10; 
+    numSphere = 50; 
   }
   else
   {

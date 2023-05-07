@@ -8,24 +8,20 @@
 class Sphere
 {
 public :
-	Sphere(ngl::Vec3 _pos, ngl::Vec3 _dir, GLfloat _rad, ngl::Vec3 _vel);
+	Sphere(ngl::Vec3 _pos, GLfloat _rad, ngl::Vec3 _vel);
 	Sphere();
 	~Sphere()=default; 
-	
-	// set sphere position, direction and radius
-	void set(ngl::Vec3 _pos, ngl::Vec3 _dir, GLfloat _rad, ngl::Vec3 _vel);
 
+	void set(ngl::Vec3 _pos, GLfloat _rad, ngl::Vec3 _vel);
 
 	void draw(const std::string &_shaderName,const ngl::Mat4 &_globalMat, const  ngl::Mat4 &_view, const ngl::Mat4 &_project)const ;
 	void loadMatricesToDiffuseShader(ngl::Transformation &_tx, const ngl::Mat4 &_globalMat, const ngl::Mat4 &_view , const ngl::Mat4 &_project)const;
 	
-
 	void collisionResponse_bbox_xdir();
 	void collisionResponse_bbox_ydir();
 	void collisionResponse_bbox_zdir();
 	
 	void collisionResponse_ss();
-
 
 	inline void setHit(){m_hit=true;}
 	inline void setNotHit(){m_hit=false;}
@@ -35,40 +31,16 @@ public :
 	inline ngl::Vec3 getNextPos() const {return m_nextPos;}
 	inline GLfloat getRadius() const {return m_radius;}
 
-	inline void setDirection(ngl::Vec3 _d){m_dir=_d;}
-	inline ngl::Vec3 getDirection() const { return m_dir;}
-
-	inline void setColour(const ngl::Vec4 &_c){m_colour=_c;}
-
-	// update Position
 	void updateSpherepos(const float & dt);
   
 
-
-
 private :
+
     ngl::Vec3 m_pos;
-	ngl::Vec3 m_dir;
-	
 	ngl::Vec3 m_vel;
-
-	GLfloat m_radius;
-
-
-	/*! flag to indicate if the sphere has been hit by ray */
+    GLfloat m_radius;
 	bool m_hit;
-
-
 	ngl::Vec3 m_lastPos;
-		// the next position of the sphere
 	ngl::Vec3 m_nextPos;
-	ngl::Vec4 m_colour;
-	
-
 };
-
-
-
-
-
 #endif
