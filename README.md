@@ -8,8 +8,7 @@
 2. The position and size of the bounding box do not change
 3. Frictional force acts on the ground (y-axis bottom of the bounding box)
 4. Rigid spheres with initial velocity are created inside the bounding box
-5. Collision between sphere and sphere is a perfect elastic collision
-6. Inelastic collision occurs when the sphere and the face of the bounding box collide
+5. Inelastic collision occurs for all collisions, but the coefficient of restitution is different
 
 
 ## Algorithm Design
@@ -26,7 +25,7 @@
 
 ##### Newton's second law is a quantitative description of the changes that a force can produce on the motion. It can be written in the form F = ma, where F(force) and a(acceleration) are both vector quantities. m(mass) is constant. If the force is zero, there is no acceleration on a body. 
 
-###### Britannica, (n.g.) Newton's second law: F=ma [online]. Available from: https://www.britannica.com/science/Newtons-laws-of-motion/Newtons-second-law-F-ma [Accessed May 10 2023]
+###### Britannica contributors, (n.g.) Newton's second law: F=ma. Britannica [online]. Available from: https://www.britannica.com/science/Newtons-laws-of-motion/Newtons-second-law-F-ma [Accessed May 10 2023]
 
 ##### By using numerical integration to the equation F=ma:
 ##### velocity = velocity + acceleration * dt
@@ -40,6 +39,7 @@
 
 #### 1 - Sphere and Sphere collision: Point to Point Distance
 <img width="661" alt="img_plane" src="https://github.com/thisismiakim/collsionGravity/assets/74374317/38c1b601-307d-4aba-b795-32345e580ccd">
+
 ##### By overlapping two arrays, calculate the distance between the center point of one sphere and the center point of other spheres. Relative distance between two center points can be calculated by subtracting two position vectors of the center points of the spheres. If the relative distance between two sphere center points is shorter or equal, two spheres collide each other. 
 
 
@@ -50,6 +50,13 @@
 
 
 ### Collision Response
+![COR](https://github.com/thisismiakim/collsionGravity/assets/74374317/d16367ab-905d-4b91-9815-0c212a605575)
+
+##### If there is no loss in kinetic energy in the system after the collision, it is an elastic collision. The coefficient of restitution is the ratio of the finial to initial relative speed between two objects after they collide. For the elastic collision, the coefficient of restitution is zero. However, it is hard to observe in real life. So, I set all collisions to the inelastic collision: COR is between zero and 1.
+
+###### Khan Academy (n.d.). What are elastic and inelastic collisions? (article). [online] Khan Academy. Available at: https://www.khanacademy.org/science/physics/linear-momentum/elastic-and-inelastic-collisions/a/what-are-elastic-and-inelastic-collisions#:~:text=An%20elastic%20collision%20is%20a. [Accessed 11 May 2023]
+
+###### Wikipedia Contributors (2019). Coefficient of restitution. [online] Wikipedia. Available at: https://en.wikipedia.org/wiki/Coefficient_of_restitution. [Accessed 11 May 2023]
 
 
 
