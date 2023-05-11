@@ -20,6 +20,8 @@
 ##### Gravity must be considered in real world physics environment. Set the vertical direction of the ground plane to the y-axis, and apply a force of (x, y, z) = (0, -9.8, 0) to the -y direction that draws to the bottom surface to every change in motion at every moment
 
 ### Newton's second law
+![img_physics](https://github.com/thisismiakim/collsionGravity/assets/74374317/017483c9-b587-40b0-acc4-4799ce691e1f)
+
 ##### Through numerical integration according to Newton's second law, the following position values can be expressed through the current velocity of the sphere and elapsed time. 
 
 ##### Newton's second law is a quantitative description of the changes that a force can produce on the motion. It can be written in the form F = ma, where F(force) and a(acceleration) are both vector quantities. m(mass) is constant. If the force is zero, there is no acceleration on a body. 
@@ -37,11 +39,13 @@
 ##### Vector arithmetic and geometric equation are used for collision detection calculation in 3D environment.
 
 #### 1 - Sphere and Sphere collision: Point to Point Distance
+<img width="661" alt="img_plane" src="https://github.com/thisismiakim/collsionGravity/assets/74374317/38c1b601-307d-4aba-b795-32345e580ccd">
 ##### By overlapping two arrays, calculate the distance between the center point of one sphere and the center point of other spheres. Relative distance between two center points can be calculated by subtracting two position vectors of the center points of the spheres. If the relative distance between two sphere center points is shorter or equal, two spheres collide each other. 
 
 
 
 #### 2 - Sphere and Bounding Box collision: Point to Plane Distance
+![img_sphere](https://github.com/thisismiakim/collsionGravity/assets/74374317/0ac14b69-ece5-4a2c-a71b-49b323f1ac8b)
 ##### Comparing the distance of the sphere's point agent, adding the sphere radius and the half of the bounding box extent. The distance of the sphere's point agent from the plane can be measured by using dot product calculation of the normal vector of the plane and the point's position vector.
 
 
