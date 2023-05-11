@@ -61,17 +61,17 @@
 
 
 #### Create a build directory
-##### mkdir build
-##### cd build
+###### mkdir build
+###### cd build
 
 #### Configure and build the project
 ##### Windows -
-##### mkdir build
-##### cd build
-##### cmake -DCMAKE_PREFIX_PATH=~/NGL ..
-##### cmake --build .
+###### mkdir build
+###### cd build
+###### cmake -DCMAKE_PREFIX_PATH=~/NGL ..
+###### cmake --build .
 
 ##### Mac Linux - 
-##### cmake -DCMAKE_PREFIX_PATH=~/NGL ..
-##### make
+###### cmake -DCMAKE_PREFIX_PATH=~/NGL ..
+###### make
 
