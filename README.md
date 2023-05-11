@@ -1,7 +1,7 @@
 # Collision between rigid spheres and a bounding box based on real world physics in 3D environments.
 
 ## Description
-#### The goal of this project is to develop a simple library of collision detection according to algorithms and mathematical equations based on Newton's classical mechanics.This is a collision detection system between sphere-sphere and sphere-bounding box, based on real world physics
+##### The goal of this project is to develop a simple library of collision detection according to algorithms and mathematical equations based on Newton's classical mechanics.This is a collision detection system between sphere-sphere and sphere-bounding box, based on real world physics
 
 ## Project Design
 1. The gravitational field acts within the bounding box
@@ -33,7 +33,7 @@
 ###### (dt: instantaneous change in time)
 
 
-#### Collision Detection in 3D
+### Collision Detection in 3D
 ##### Vector arithmetic and geometric equation are used for collision detection calculation in 3D environment.
 
 #### 1 - Sphere and Sphere collision: Point to Point Distance
@@ -51,7 +51,12 @@
 
 
 
-### Compilation
+
+
+
+
+
+## Compilation
 ##### This requires that NGL is installed in $(HOME)/NGL (or other system path) and that the required vcpkg installs are in place.
 
 
