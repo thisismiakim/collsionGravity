@@ -1,4 +1,4 @@
-# Project Title: Collision between rigid spheres and a bounding box based on real world physics in 3D environments.
+# Collision between rigid spheres and a bounding box based on real world physics in 3D environments.
 
 ## Description
 #### The goal of this project is to develop a simple library of collision detection according to algorithms and mathematical equations based on Newton's classical mechanics.This is a collision detection system between sphere-sphere and sphere-bounding box, based on real world physics
