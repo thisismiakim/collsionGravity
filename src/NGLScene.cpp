@@ -99,7 +99,7 @@ void NGLScene::initializeGL()
 
   // ---------- objects -----------
   // ------ Sphere
-  ngl::VAOPrimitives::createSphere("sphere", 1.0f, 40.0f); // radius..
+  ngl::VAOPrimitives::createSphere("sphere", 1.0f, 40.0f); 
 
   // ------ Bounding box
   m_bbox = std::make_unique<ngl::BBox>(ngl::Vec3(0.0f, 0.0f, 0.0f), 80.0f, 80.0f, 80.0f);

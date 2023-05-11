@@ -53,10 +53,10 @@ RM = /usr/local/Cellar/cmake/3.26.3/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/mk/Desktop/NGL_Project/collision3
+CMAKE_SOURCE_DIR = /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/mk/Desktop/NGL_Project/collision3/build
+CMAKE_BINARY_DIR = /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/SphereCollision.dir/depend.make
@@ -72,86 +72,86 @@ include CMakeFiles/SphereCollision.dir/flags.make
 CMakeFiles/SphereCollision.dir/SphereCollision_autogen/mocs_compilation.cpp.o: CMakeFiles/SphereCollision.dir/flags.make
 CMakeFiles/SphereCollision.dir/SphereCollision_autogen/mocs_compilation.cpp.o: SphereCollision_autogen/mocs_compilation.cpp
 CMakeFiles/SphereCollision.dir/SphereCollision_autogen/mocs_compilation.cpp.o: CMakeFiles/SphereCollision.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mk/Desktop/NGL_Project/collision3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SphereCollision.dir/SphereCollision_autogen/mocs_compilation.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SphereCollision.dir/SphereCollision_autogen/mocs_compilation.cpp.o -MF CMakeFiles/SphereCollision.dir/SphereCollision_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/SphereCollision.dir/SphereCollision_autogen/mocs_compilation.cpp.o -c /Users/mk/Desktop/NGL_Project/collision3/build/SphereCollision_autogen/mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SphereCollision.dir/SphereCollision_autogen/mocs_compilation.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SphereCollision.dir/SphereCollision_autogen/mocs_compilation.cpp.o -MF CMakeFiles/SphereCollision.dir/SphereCollision_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/SphereCollision.dir/SphereCollision_autogen/mocs_compilation.cpp.o -c /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/build/SphereCollision_autogen/mocs_compilation.cpp
 
 CMakeFiles/SphereCollision.dir/SphereCollision_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SphereCollision.dir/SphereCollision_autogen/mocs_compilation.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mk/Desktop/NGL_Project/collision3/build/SphereCollision_autogen/mocs_compilation.cpp > CMakeFiles/SphereCollision.dir/SphereCollision_autogen/mocs_compilation.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/build/SphereCollision_autogen/mocs_compilation.cpp > CMakeFiles/SphereCollision.dir/SphereCollision_autogen/mocs_compilation.cpp.i
 
 CMakeFiles/SphereCollision.dir/SphereCollision_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SphereCollision.dir/SphereCollision_autogen/mocs_compilation.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mk/Desktop/NGL_Project/collision3/build/SphereCollision_autogen/mocs_compilation.cpp -o CMakeFiles/SphereCollision.dir/SphereCollision_autogen/mocs_compilation.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/build/SphereCollision_autogen/mocs_compilation.cpp -o CMakeFiles/SphereCollision.dir/SphereCollision_autogen/mocs_compilation.cpp.s
 
 CMakeFiles/SphereCollision.dir/src/main.cpp.o: CMakeFiles/SphereCollision.dir/flags.make
-CMakeFiles/SphereCollision.dir/src/main.cpp.o: /Users/mk/Desktop/NGL_Project/collision3/src/main.cpp
+CMakeFiles/SphereCollision.dir/src/main.cpp.o: /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/src/main.cpp
 CMakeFiles/SphereCollision.dir/src/main.cpp.o: CMakeFiles/SphereCollision.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mk/Desktop/NGL_Project/collision3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SphereCollision.dir/src/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SphereCollision.dir/src/main.cpp.o -MF CMakeFiles/SphereCollision.dir/src/main.cpp.o.d -o CMakeFiles/SphereCollision.dir/src/main.cpp.o -c /Users/mk/Desktop/NGL_Project/collision3/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SphereCollision.dir/src/main.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SphereCollision.dir/src/main.cpp.o -MF CMakeFiles/SphereCollision.dir/src/main.cpp.o.d -o CMakeFiles/SphereCollision.dir/src/main.cpp.o -c /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/src/main.cpp
 
 CMakeFiles/SphereCollision.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SphereCollision.dir/src/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mk/Desktop/NGL_Project/collision3/src/main.cpp > CMakeFiles/SphereCollision.dir/src/main.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/src/main.cpp > CMakeFiles/SphereCollision.dir/src/main.cpp.i
 
 CMakeFiles/SphereCollision.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SphereCollision.dir/src/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mk/Desktop/NGL_Project/collision3/src/main.cpp -o CMakeFiles/SphereCollision.dir/src/main.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/src/main.cpp -o CMakeFiles/SphereCollision.dir/src/main.cpp.s
 
 CMakeFiles/SphereCollision.dir/src/NGLScene.cpp.o: CMakeFiles/SphereCollision.dir/flags.make
-CMakeFiles/SphereCollision.dir/src/NGLScene.cpp.o: /Users/mk/Desktop/NGL_Project/collision3/src/NGLScene.cpp
+CMakeFiles/SphereCollision.dir/src/NGLScene.cpp.o: /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/src/NGLScene.cpp
 CMakeFiles/SphereCollision.dir/src/NGLScene.cpp.o: CMakeFiles/SphereCollision.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mk/Desktop/NGL_Project/collision3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SphereCollision.dir/src/NGLScene.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SphereCollision.dir/src/NGLScene.cpp.o -MF CMakeFiles/SphereCollision.dir/src/NGLScene.cpp.o.d -o CMakeFiles/SphereCollision.dir/src/NGLScene.cpp.o -c /Users/mk/Desktop/NGL_Project/collision3/src/NGLScene.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SphereCollision.dir/src/NGLScene.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SphereCollision.dir/src/NGLScene.cpp.o -MF CMakeFiles/SphereCollision.dir/src/NGLScene.cpp.o.d -o CMakeFiles/SphereCollision.dir/src/NGLScene.cpp.o -c /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/src/NGLScene.cpp
 
 CMakeFiles/SphereCollision.dir/src/NGLScene.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SphereCollision.dir/src/NGLScene.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mk/Desktop/NGL_Project/collision3/src/NGLScene.cpp > CMakeFiles/SphereCollision.dir/src/NGLScene.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/src/NGLScene.cpp > CMakeFiles/SphereCollision.dir/src/NGLScene.cpp.i
 
 CMakeFiles/SphereCollision.dir/src/NGLScene.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SphereCollision.dir/src/NGLScene.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mk/Desktop/NGL_Project/collision3/src/NGLScene.cpp -o CMakeFiles/SphereCollision.dir/src/NGLScene.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/src/NGLScene.cpp -o CMakeFiles/SphereCollision.dir/src/NGLScene.cpp.s
 
 CMakeFiles/SphereCollision.dir/src/Sphere.cpp.o: CMakeFiles/SphereCollision.dir/flags.make
-CMakeFiles/SphereCollision.dir/src/Sphere.cpp.o: /Users/mk/Desktop/NGL_Project/collision3/src/Sphere.cpp
+CMakeFiles/SphereCollision.dir/src/Sphere.cpp.o: /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/src/Sphere.cpp
 CMakeFiles/SphereCollision.dir/src/Sphere.cpp.o: CMakeFiles/SphereCollision.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mk/Desktop/NGL_Project/collision3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SphereCollision.dir/src/Sphere.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SphereCollision.dir/src/Sphere.cpp.o -MF CMakeFiles/SphereCollision.dir/src/Sphere.cpp.o.d -o CMakeFiles/SphereCollision.dir/src/Sphere.cpp.o -c /Users/mk/Desktop/NGL_Project/collision3/src/Sphere.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SphereCollision.dir/src/Sphere.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SphereCollision.dir/src/Sphere.cpp.o -MF CMakeFiles/SphereCollision.dir/src/Sphere.cpp.o.d -o CMakeFiles/SphereCollision.dir/src/Sphere.cpp.o -c /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/src/Sphere.cpp
 
 CMakeFiles/SphereCollision.dir/src/Sphere.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SphereCollision.dir/src/Sphere.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mk/Desktop/NGL_Project/collision3/src/Sphere.cpp > CMakeFiles/SphereCollision.dir/src/Sphere.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/src/Sphere.cpp > CMakeFiles/SphereCollision.dir/src/Sphere.cpp.i
 
 CMakeFiles/SphereCollision.dir/src/Sphere.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SphereCollision.dir/src/Sphere.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mk/Desktop/NGL_Project/collision3/src/Sphere.cpp -o CMakeFiles/SphereCollision.dir/src/Sphere.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/src/Sphere.cpp -o CMakeFiles/SphereCollision.dir/src/Sphere.cpp.s
 
 CMakeFiles/SphereCollision.dir/src/NGLSceneMouseControls.cpp.o: CMakeFiles/SphereCollision.dir/flags.make
-CMakeFiles/SphereCollision.dir/src/NGLSceneMouseControls.cpp.o: /Users/mk/Desktop/NGL_Project/collision3/src/NGLSceneMouseControls.cpp
+CMakeFiles/SphereCollision.dir/src/NGLSceneMouseControls.cpp.o: /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/src/NGLSceneMouseControls.cpp
 CMakeFiles/SphereCollision.dir/src/NGLSceneMouseControls.cpp.o: CMakeFiles/SphereCollision.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mk/Desktop/NGL_Project/collision3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SphereCollision.dir/src/NGLSceneMouseControls.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SphereCollision.dir/src/NGLSceneMouseControls.cpp.o -MF CMakeFiles/SphereCollision.dir/src/NGLSceneMouseControls.cpp.o.d -o CMakeFiles/SphereCollision.dir/src/NGLSceneMouseControls.cpp.o -c /Users/mk/Desktop/NGL_Project/collision3/src/NGLSceneMouseControls.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SphereCollision.dir/src/NGLSceneMouseControls.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SphereCollision.dir/src/NGLSceneMouseControls.cpp.o -MF CMakeFiles/SphereCollision.dir/src/NGLSceneMouseControls.cpp.o.d -o CMakeFiles/SphereCollision.dir/src/NGLSceneMouseControls.cpp.o -c /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/src/NGLSceneMouseControls.cpp
 
 CMakeFiles/SphereCollision.dir/src/NGLSceneMouseControls.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SphereCollision.dir/src/NGLSceneMouseControls.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mk/Desktop/NGL_Project/collision3/src/NGLSceneMouseControls.cpp > CMakeFiles/SphereCollision.dir/src/NGLSceneMouseControls.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/src/NGLSceneMouseControls.cpp > CMakeFiles/SphereCollision.dir/src/NGLSceneMouseControls.cpp.i
 
 CMakeFiles/SphereCollision.dir/src/NGLSceneMouseControls.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SphereCollision.dir/src/NGLSceneMouseControls.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mk/Desktop/NGL_Project/collision3/src/NGLSceneMouseControls.cpp -o CMakeFiles/SphereCollision.dir/src/NGLSceneMouseControls.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/src/NGLSceneMouseControls.cpp -o CMakeFiles/SphereCollision.dir/src/NGLSceneMouseControls.cpp.s
 
 CMakeFiles/SphereCollision.dir/src/Grid.cpp.o: CMakeFiles/SphereCollision.dir/flags.make
-CMakeFiles/SphereCollision.dir/src/Grid.cpp.o: /Users/mk/Desktop/NGL_Project/collision3/src/Grid.cpp
+CMakeFiles/SphereCollision.dir/src/Grid.cpp.o: /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/src/Grid.cpp
 CMakeFiles/SphereCollision.dir/src/Grid.cpp.o: CMakeFiles/SphereCollision.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mk/Desktop/NGL_Project/collision3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SphereCollision.dir/src/Grid.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SphereCollision.dir/src/Grid.cpp.o -MF CMakeFiles/SphereCollision.dir/src/Grid.cpp.o.d -o CMakeFiles/SphereCollision.dir/src/Grid.cpp.o -c /Users/mk/Desktop/NGL_Project/collision3/src/Grid.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SphereCollision.dir/src/Grid.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SphereCollision.dir/src/Grid.cpp.o -MF CMakeFiles/SphereCollision.dir/src/Grid.cpp.o.d -o CMakeFiles/SphereCollision.dir/src/Grid.cpp.o -c /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/src/Grid.cpp
 
 CMakeFiles/SphereCollision.dir/src/Grid.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SphereCollision.dir/src/Grid.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mk/Desktop/NGL_Project/collision3/src/Grid.cpp > CMakeFiles/SphereCollision.dir/src/Grid.cpp.i
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/src/Grid.cpp > CMakeFiles/SphereCollision.dir/src/Grid.cpp.i
 
 CMakeFiles/SphereCollision.dir/src/Grid.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SphereCollision.dir/src/Grid.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mk/Desktop/NGL_Project/collision3/src/Grid.cpp -o CMakeFiles/SphereCollision.dir/src/Grid.cpp.s
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/src/Grid.cpp -o CMakeFiles/SphereCollision.dir/src/Grid.cpp.s
 
 # Object files for target SphereCollision
 SphereCollision_OBJECTS = \
@@ -174,7 +174,7 @@ SphereCollision: CMakeFiles/SphereCollision.dir/src/Grid.cpp.o
 SphereCollision: CMakeFiles/SphereCollision.dir/build.make
 SphereCollision: /Users/mk/vcpkg/installed/x64-osx/debug/lib/libOpenImageIO_d.a
 SphereCollision: /Users/mk/vcpkg/installed/x64-osx/debug/lib/libOpenImageIO_Util_d.a
-SphereCollision: /Users/mk/vcpkg/installed/x64-osx/lib/libfreetype.a
+SphereCollision: /Users/mk/vcpkg/installed/x64-osx/debug/lib/libfreetyped.a
 SphereCollision: /Users/mk/vcpkg/installed/x64-osx/debug/lib/libgl3w.a
 SphereCollision: /Users/mk/vcpkg/installed/x64-osx/debug/lib/libfmtd.a
 SphereCollision: /Users/mk/vcpkg/installed/x64-osx/debug/lib/libOpenEXR-3_1_d.a
@@ -182,21 +182,21 @@ SphereCollision: /Users/mk/vcpkg/installed/x64-osx/debug/lib/libImath-3_1_d.a
 SphereCollision: /Users/mk/vcpkg/installed/x64-osx/debug/lib/libIlmThread-3_1_d.a
 SphereCollision: /Users/mk/vcpkg/installed/x64-osx/debug/lib/libIex-3_1_d.a
 SphereCollision: /Users/mk/vcpkg/installed/x64-osx/debug/lib/libOpenEXRCore-3_1_d.a
-SphereCollision: /Users/mk/vcpkg/installed/x64-osx/lib/libtiff.a
-SphereCollision: /Users/mk/vcpkg/installed/x64-osx/lib/libjpeg.a
-SphereCollision: /Users/mk/vcpkg/installed/x64-osx/lib/liblzma.a
+SphereCollision: /Users/mk/vcpkg/installed/x64-osx/debug/lib/libtiffd.a
+SphereCollision: /Users/mk/vcpkg/installed/x64-osx/debug/lib/libjpeg.a
+SphereCollision: /Users/mk/vcpkg/installed/x64-osx/debug/lib/liblzma.a
 SphereCollision: /Users/mk/vcpkg/installed/x64-osx/debug/lib/libbz2d.a
-SphereCollision: /Users/mk/vcpkg/installed/x64-osx/lib/libpng16.a
-SphereCollision: /Users/mk/vcpkg/installed/x64-osx/lib/libz.a
-SphereCollision: /Users/mk/vcpkg/installed/x64-osx/lib/libbz2.a
-SphereCollision: /Users/mk/vcpkg/installed/x64-osx/lib/libbrotlidec-static.a
-SphereCollision: /Users/mk/vcpkg/installed/x64-osx/lib/libbrotlicommon-static.a
+SphereCollision: /Users/mk/vcpkg/installed/x64-osx/debug/lib/libpng16d.a
+SphereCollision: /Users/mk/vcpkg/installed/x64-osx/debug/lib/libz.a
+SphereCollision: /Users/mk/vcpkg/installed/x64-osx/debug/lib/libbz2d.a
+SphereCollision: /Users/mk/vcpkg/installed/x64-osx/debug/lib/libbrotlidec-static.a
+SphereCollision: /Users/mk/vcpkg/installed/x64-osx/debug/lib/libbrotlicommon-static.a
 SphereCollision: /usr/local/Cellar/qt@5/5.15.8_3/lib/QtOpenGL.framework/QtOpenGL
 SphereCollision: /usr/local/Cellar/qt@5/5.15.8_3/lib/QtWidgets.framework/QtWidgets
 SphereCollision: /usr/local/Cellar/qt@5/5.15.8_3/lib/QtGui.framework/QtGui
 SphereCollision: /usr/local/Cellar/qt@5/5.15.8_3/lib/QtCore.framework/QtCore
 SphereCollision: CMakeFiles/SphereCollision.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/mk/Desktop/NGL_Project/collision3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable SphereCollision"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable SphereCollision"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SphereCollision.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -208,6 +208,6 @@ CMakeFiles/SphereCollision.dir/clean:
 .PHONY : CMakeFiles/SphereCollision.dir/clean
 
 CMakeFiles/SphereCollision.dir/depend:
-	cd /Users/mk/Desktop/NGL_Project/collision3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/mk/Desktop/NGL_Project/collision3 /Users/mk/Desktop/NGL_Project/collision3 /Users/mk/Desktop/NGL_Project/collision3/build /Users/mk/Desktop/NGL_Project/collision3/build /Users/mk/Desktop/NGL_Project/collision3/build/CMakeFiles/SphereCollision.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/build /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/build /Users/mk/Desktop/NGL_Project/Finals/collision_codeDone/build/CMakeFiles/SphereCollision.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/SphereCollision.dir/depend
 

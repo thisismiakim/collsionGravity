@@ -65,8 +65,6 @@ void Sphere::draw(const std::string &_shaderName, const ngl::Mat4 &_globalMat,  
 }
 
 
-// numerical integration?
-// friction
 void Sphere::updateSpherepos(const float &dt)
 {
   m_lastPos=m_pos;
@@ -125,7 +123,7 @@ void Sphere::collisionResponse_ss()
 {
   // perfect elastic collision
   // set coefficient of restitution(COR)
-  static const float cor = 0.9f;
+  static const float cor = 1.0f;
 
   GLfloat m_velScale = abs(m_vel.m_x) + abs(m_vel.m_y) + abs(m_vel.m_z);
   if (m_velScale >= 0.0f)
